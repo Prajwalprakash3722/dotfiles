@@ -12,9 +12,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color" # getting proper colors
@@ -102,7 +99,7 @@ alias vim="nvim"
 alias cat="bat"
 alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim'
 alias lzd='lazydocker'
-
+alias at='npx alacritty-themes'
 # This is how I maintain dotfiles :)
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
