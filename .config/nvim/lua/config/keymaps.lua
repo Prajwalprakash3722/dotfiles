@@ -5,3 +5,6 @@
 -- making github co-pilot suggestions accept with shift + enter
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-e>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
+-- remap esc key to jk
+vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })

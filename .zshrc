@@ -21,9 +21,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# enable command auto-correction.
-ENABLE_CORRECTION="true"
-
 # I like these plugins 
 plugins=(git
         npm
@@ -102,6 +99,36 @@ alias lzd='lazydocker'
 alias at='npx alacritty-themes'
 # This is how I maintain dotfiles :)
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias unmount_all_and_exit='unmount_all && exit'
+alias d=docker
+alias dc=docker-compose
+alias dkill="pgrep \"Docker\" | xargs kill -9"
+
+alias v='nvim -w ~/.vimlog "$@"'
+alias vi='nvim -w ~/.vimlog "$@"'
+alias vim='nvim -w ~/.vimlog "$@"'
+alias venv='virtualenv venv && source venv/bin/activate'
+alias s='source ~/.zshrc'
+alias c='clear'
+alias r='ranger'
+# If I want to write a sudden note
+note() {
+    echo "date: $(date)" >> $HOME/drafts.txt
+    echo "$@" >> $HOME/drafts.txt
+    echo "" >> $HOME/drafts.txt
+}
+
+
+function unmount_all {
+    diskutil list |
+    grep external |
+    cut -d ' ' -f 1 |
+    while read file
+    do
+        diskutil unmountDisk "$file"
+    done
+}
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
