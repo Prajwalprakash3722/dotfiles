@@ -38,12 +38,12 @@ window:
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
   #opacity: 1.0
-  opacity: 0.90
+  opacity: 0.99
   # Window decorations
   #
   # Values for `decorations`:
-  #     - full: Borders and title bar
-  #     - none: Neither borders nor title bar
+  # - full: Borders and title bar
+  # - none: Neither borders nor title bar
   #
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
@@ -101,7 +101,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Hack Nerd Font 
+    family: Hack Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -119,7 +119,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Hack Nerd Font 
+    family: Hack Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -137,7 +137,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Hack Nerd Font 
+    family: Hack Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -155,7 +155,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Hack Nerd Font 
+    family: Hack Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -809,57 +809,40 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 colors:
+  # Default colors
   primary:
-    background: '#282a36'
-    foreground: '#f8f8f2'
-    bright_foreground: '#ffffff'
+    background: '0x1E1D2F'
+    foreground: '0xD9E0EE'
+
   cursor:
-    text: CellBackground
-    cursor: CellForeground
-  vi_mode_cursor:
-    text: CellBackground
-    cursor: CellForeground
-  search:
-    matches:
-      foreground: '#44475a'
-      background: '#50fa7b'
-    focused_match:
-      foreground: '#44475a'
-      background: '#ffb86c'
-    footer_bar:
-      background: '#282a36'
-      foreground: '#f8f8f2'
-  hints:
-    start:
-      foreground: '#282a36'
-      background: '#f1fa8c'
-    end:
-      foreground: '#f1fa8c'
-      background: '#282a36'
-  line_indicator:
-    foreground: None
-    background: None
-  selection:
-    text: CellForeground
-    background: '#44475a'
+    text: '0x1E1D2F'
+    cursor: '0xF5E0DC'
+
+  # Normal colors
   normal:
-    black: '#21222c'
-    red: '#ff5555'
-    green: '#50fa7b'
-    yellow: '#f1fa8c'
-    blue: '#bd93f9'
-    magenta: '#ff79c6'
-    cyan: '#8be9fd'
-    white: '#f8f8f2'
+    black: '0x6E6C7E'
+    red: '0xF28FAD'
+    green: '0xABE9B3'
+    yellow: '0xFAE3B0'
+    blue: '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan: '0x89DCEB'
+    white: '0xD9E0EE'
+
+  # Bright colors
   bright:
-    black: '#6272a4'
-    red: '#ff6e6e'
-    green: '#69ff94'
-    yellow: '#ffffa5'
-    blue: '#d6acff'
-    magenta: '#ff92df'
-    cyan: '#a4ffff'
-    white: '#ffffff'
+    black: '0x988BA2'
+    red: '0xF28FAD'
+    green: '0xABE9B3'
+    yellow: '0xFAE3B0'
+    blue: '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan: '0x89DCEB'
+    white: '0xD9E0EE'
+
+  indexed_colors:
+    - { index: 16, color: '0xF8BD96' }
+    - { index: 17, color: '0xF5E0DC' }
 
 # Visual Bell
 #
@@ -893,12 +876,12 @@ visual_bell:
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true
 cursor:
-# Cursor style
-#
-# Values for `style`:
-#  - ▇ Block
-#   - _ Underline
-#   - | Beam
+  # Cursor style
+  #
+  # Values for `style`:
+  #  - ▇ Block
+  #   - _ Underline
+  #   - | Beam
   style: Block
 
 # If this is `true`, the cursor will be rendered as a hollow box when the
@@ -1115,7 +1098,7 @@ key_bindings:
   - { key: Plus, mods: Control, action: IncreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
   - { key: F11, mods: None, action: ToggleFullscreen }
-  - { key: T,   mods: Control|Shift, action: SpawnNewInstance }
+  - { key: T, mods: Control|Shift, action: SpawnNewInstance }
   - { key: Paste, mods: None, action: Paste }
   - { key: Copy, mods: None, action: Copy }
   - { key: L, mods: Control, action: ClearLogNotice }
@@ -1144,4 +1127,4 @@ key_bindings:
       action: ScrollToBottom,
       mode: ~Alt
     }
-theme: Dracula
+theme: Catppuccin

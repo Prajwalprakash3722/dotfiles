@@ -110,8 +110,8 @@ alias vi='nvim -w ~/.vimlog "$@"'
 alias vim='nvim -w ~/.vimlog "$@"'
 alias venv='virtualenv venv && source venv/bin/activate'
 alias s='source ~/.zshrc'
-alias c='clear'
 alias r='ranger'
+alias "cs=xclip -selection clipboard" # copy to system wide clipboard (register +)
 # If I want to write a sudden note
 note() {
     echo "date: $(date)" >> $HOME/drafts.txt
