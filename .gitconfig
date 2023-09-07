@@ -3,3 +3,5 @@
 	email = prajwalprakash3722@gmail.com
 [core]
 	editor = nvim
+[init]
+	defaultBranch = master

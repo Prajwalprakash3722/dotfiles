@@ -29,6 +29,7 @@ plugins=(git
         zsh-autosuggestions
         sudo
         kubectl
+        terraform
         )
 
 source $ZSH/oh-my-zsh.sh
