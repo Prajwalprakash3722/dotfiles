@@ -131,8 +131,16 @@ function unmount_all {
     done
 }
 
+
+alias y='yarn'
+
 # starship Initialization
 eval "$(starship init zsh)"
+
+source "$HOME/.cargo/env"
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
