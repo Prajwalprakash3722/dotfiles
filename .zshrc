@@ -30,6 +30,9 @@ plugins=(git
         sudo
         kubectl
         terraform
+	aws
+	packer
+	docker
         )
 
 source $ZSH/oh-my-zsh.sh
@@ -164,3 +167,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
