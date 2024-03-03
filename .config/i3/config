@@ -160,10 +160,15 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+default_border pixel 0 
+default_floating_border pixel 0
+smart_borders on
+gaps inner 5
+gaps outer 5
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload exec "notify-send 'i3 config reloaded'"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r restart exec "notify-send 'i3 restarted'"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -201,7 +206,9 @@ bindsym $mod+r mode "resize"
 #  status_command ~/.config/polybar/launch.sh
 #}
 
-exec --no-startup-id picom -f
+exec_always --no-startup-id picom -b
+exec_always --no-startup-id dunst -b
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 exec feh --randomize --bg-fill /usr/share/endeavouros/backgrounds/eos_wallpapers_community/*
+exec_always autotiling 
 include colors.conf
