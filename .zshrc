@@ -16,12 +16,8 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color" # getting proper colors
 
-# using bat as the MANPAGER
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
 ZSH_THEME=""
 
-# I like these plugins 
 plugins=(git
         npm
         dotenv
@@ -36,6 +32,9 @@ plugins=(git
         )
 
 source $ZSH/oh-my-zsh.sh
+
+alias f="fzf"
+alias sl="ls"
 
 # Countdown
 cdown () {
@@ -73,9 +72,11 @@ ex ()
   fi
 }
 
+alias don="sudo systemctl start docker.service"
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
-
+# small command to turn on cloudflared proxy
+alias proxy="sudo systemctl start cloudflared.service"
 # Changing "ls" to "eza"
 alias ls='eza -l --color=always --group-directories-first'  # long format
 alias la='eza -a --color=always --group-directories-first'  # all files and dirs
@@ -173,3 +174,11 @@ eval "$(zoxide init zsh)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# pnpm
+export PNPM_HOME="/home/prajwal/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
